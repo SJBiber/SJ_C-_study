@@ -15,6 +15,12 @@ public:
     Time operator+(Time&);
     void show();
     ~Time();
+    friend Time operator*(int ,Time&);
+    friend std::ostream&operator<<(std::ostream& os , Time& t)
+    {
+        os << t.hours << "시간 " << t.mins << "분";
+        return os;
+    }
 };
 
 
@@ -75,3 +81,13 @@ Time::~Time()
 {
 
 };
+
+Time operator*(int n, Time& t)
+{
+    Time result;
+    long resultMin = t.hours * n * 60 + t.mins * n;
+    result.hours = resultMin / 60;
+    result.mins  = resultMin % 60;
+    return result;
+
+}
