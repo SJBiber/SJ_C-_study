@@ -1,0 +1,16 @@
+SJ c++ 스터디 용 Git 디렉토리
+
+======================================
+
+1. iostream
+2. string
+3. loop
+4. overloading
+5. thread
+6. func
+7. memory
+8. class
+
+*. gRPC
+
+======================================
