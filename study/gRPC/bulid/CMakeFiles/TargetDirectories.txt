@@ -1,0 +1,4 @@
+C:/project/c++/study/gRPC/bulid/CMakeFiles/server.dir
+C:/project/c++/study/gRPC/bulid/CMakeFiles/client.dir
+C:/project/c++/study/gRPC/bulid/CMakeFiles/ALL_BUILD.dir
+C:/project/c++/study/gRPC/bulid/CMakeFiles/ZERO_CHECK.dir

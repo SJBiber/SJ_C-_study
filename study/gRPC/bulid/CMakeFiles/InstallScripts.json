@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/project/c++/study/gRPC/bulid/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
