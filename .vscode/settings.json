@@ -114,5 +114,6 @@
         "string_view": "cpp",
         "rope": "cpp",
         "slist": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "C:/project/c++/SJ_C-_study/study/gRPC"
 }
