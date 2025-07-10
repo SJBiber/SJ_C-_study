@@ -10,6 +10,7 @@ SJ c++ 스터디 용 Git 디렉토리
 6. func
 7. memory
 8. class
+9. algorithm  C++ 관련 백준 알고리즘 문제
 
 *. gRPC
 
