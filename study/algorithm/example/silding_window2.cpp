@@ -19,12 +19,13 @@ for(N만큼 반복)
 }
 */
 
-#include<iostream>
-#include<deque>
+#include<iostream>  // 입출력
+#include<deque>     // deque 자료 구조 사용
 
 using namespace std;
 
-typedef pair<int, int> Node;
+typedef pair<int, int> Node;    //Node라는 타입 이름을 pair<int ,int>의 별칭으로 정의   
+                                //Node는 두 개의 int를 묶은 자료형 (value , index로 사용됨)
 
 int main()
 {
@@ -40,18 +41,24 @@ int main()
         int now;
         cin >> now;
 
-        while(mydeque.size() && mydeque.back().first > now)
+        //mydeque의 현재 사이즈 및 mydeque의 맨뒤 Node 값의 value를 now랑 비교
+        while(mydeque.size() && mydeque.back().first > now) 
         {
+            //참이면 맨뒤 Node 값 제거
             mydeque.pop_back();
         }
 
+        //맨뒤에 now값을 value , i 값을 index로 큐에 삽입
         mydeque.push_back(Node(now,i));
 
+        //mydeque의 맨앞 index값을 i-L의 범위에 있는지 비교
         if(mydeque.front().second <= i-L)
         {
+            //index가 i-L의 범위가 아닐시 맨앞 Node 데이터 제거
             mydeque.pop_front();
         }
 
+        // 맨앞 Node의 value 값 출력
         cout << mydeque.front().first << ' ';
 
     }
