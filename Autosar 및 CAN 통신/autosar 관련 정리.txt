@@ -1,0 +1,51 @@
+Autosar 라는 표준 아키텍처에 대해 알아보자
+Autosar는 자동자 임베디드 소프트웨어 아키텍져 표준
+
+1. Autosar 사용 목적
+2. Autosar 아키텍쳐
+3. ARXML 이해
+
+Autosar : 개발형 자동차 표준 소프트웨어 구조의 약자 / ECU 소프트웨어의 효율적인 개발과 관리를 위한 표준 아키텍쳐
+AUTOSAR(AUTomotive Open System ARchitecture)
+
+
+1. Autosar 사용 목적
+ - SW 개발 편의성	: ECU 개발에 대한 표준과 규격 제시
+	**ECU란 ? 자동차 내의 전자 시스템을 제어하는 맠이크로 컨트롤러 기반 장치
+	ex)
+	|명칭								|제어대상				|설명
+	|Engine ECU (ECU)					|엔진 제어			|연료 분사, 점화 시기 제어 등
+	|TCU (Transmission Control Unit)	|변속기				|자동 변속기 제어
+	|ABS ECU							|브레이크				|바퀴 잠김 방지 (Anti-lock Braking System)
+	|BCM (Body Control Module)			|차체 전장			|도어 잠금, 라이트, 창문 제어
+	|ADAS ECU							|카메라, 레이더 등		|자율주행 보조 시스템 제어
+	
+ - SW 재 사용성 	: 공통 가능한 SW는 재 사용 비용절감 ,효율성
+ - SW 모듈화 	: 모듈화된 SW , A사/B사/C사 레고 블록
+ 
+2. Autosar 아키텍쳐
+	- 주요 구성 요소(Classic Platform 기준)
+	 -> Autosar Classic Platform은 주로 실시간 제어가 필요한 임베디드 시스템에 사용 되며 , 3계층으로 나누어짐
+		1. Application Layer(어플리케이션 계층) / #ASW
+			- 각 OEM과 공급자가 개발해야할 제어기 고유 핵심 기능 / 서로 다른 ECU에서 재활용 가능
+			- ECU에 탑재되는 실제 기능 로직이 위치.
+			- SW-C(Software Component) 단위로 구성되며 , 각 SW-C는 독립적으로 개발 / 검증됨
+			ex) 브레이크 제어 , 센서 데이터 처리 등
+		2. RTE(Runtime Enviroment)
+			- SW-C와 아래 BSW 사이를 연결하는 미들웨어
+			- 소프트웨어 컴포넌트 간 통신을 추상화하여 서로 직접 연결되지 않도록 분리
+			- 컴포넌트 간 의존성을 줄이고 , ECU 간 이식정 향상
+		3. BSW(Basic Software, 기본 소프트웨어 계층)
+			- 하드웨어와 직접 연결되는 계층으로 , 마이크로 컨트롤러 , 드라이버 , OS 등이 포함됨.
+			- 자동차관련 통신은 CAN(controller area Network) 통신을 사용함 
+			- 세부 계층 구정 :
+				- MCAL(Microcontroller Abstraction Layer) : 하드웨어 의존적인 드라이버 제공
+				- ECU Austraction Layer : 하드웨어 독립적인 API 제공
+				- Service Layer 		: 진단 , 통신 , 메모리 관리 등의 시스템 서비스 제공
+				- Complex Dirvers 		: 표준화 되지 않는 특수 드라이버
+				
+				
+3. ARXML 이해
+	- autosar 기반의 표준 문서 포멧
+	- OEM 과 Supplier , 여러 Tool간의 협럽 매개
+	
