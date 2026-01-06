@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 # .env 파일에서 환경 변수를 로드합니다.
 load_dotenv()
-
+#
 # YouTube API 설정
 # 구글 클라우드 콘솔에서 발급받은 API 키를 .env 파일에 입력하세요.
 API_KEY = os.getenv('YOUTUBE_API_KEY')
